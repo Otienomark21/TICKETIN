@@ -1,0 +1,134 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+    TICKETIN PLUS- Profile
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+            font-family: 'Roboto', sans-serif;
+        }
+  </style>
+  <script>
+   function confirmDelete() {
+            if (confirm("Are you sure you want to delete your account? This action cannot be undone.")) {
+                alert("Account deleted.");
+                // Add your account deletion logic here
+            }
+        }
+  </script>
+ </head>
+ <body class="bg-gray-100">
+  <header class="bg-black text-white p-4 flex justify-between items-center">
+    <img alt="Company logo, a stylized letter 'T' in black and orange" class="h-10 w-10 mr-2" height="50" src="https://storage.googleapis.com/a1aa/image/hCIfyXO9xzW3HKp6f4sZidqucO2hfckeNuDnf69YeEdJW7AeJA.jpg" width="40"/>
+    <h1 class="text-xl font-bold">TICKETIN PLUS</h1>
+    </h1>
+   </div>
+   <div class="flex items-center">
+    <input class="p-2 rounded bg-white text-black" placeholder="Search..." type="text"/>
+    <button class="ml-2 p-2 bg-orange-600 rounded">
+     <i class="fas fa-search">
+     </i>
+    </button>
+   </div>
+   
+  </header>
+  <div class="flex">
+   <aside class="bg-black text-white w-64 p-4 space-y-4">
+    <nav>
+     <ul>
+      <li class="mb-2">
+       <a class="flex items-center p-2 hover:bg-gray-700 rounded" href="dashboard.html">
+        <i class="fas fa-home mr-2">
+        </i>
+        Dashboard
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="flex items-center p-2 hover:bg-gray-700 rounded" href="tickets.html">
+        <i class="fas fa-ticket-alt mr-2">
+        </i>
+        Tickets
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="flex items-center p-2 hover:bg-gray-700 rounded" href="settings.html">
+        <i class="fas fa-cogs mr-2">
+        </i>
+        Settings
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="flex items-center p-2 hover:bg-gray-700 rounded" href="users.html">
+        <i class="fas fa-users mr-2">
+        </i>
+        Users
+       </a>
+      </li>
+      <li class="mb-2">
+       <a class="flex items-center p-2 hover:bg-gray-700 rounded" href="reports.html">
+        <i class="fas fa-chart-line mr-2">
+        </i>
+        Reports
+       </a>
+      </li>
+     </ul>
+    </nav>
+   </aside>
+   <main class="flex-1 p-6">
+    <h2 class="text-2xl font-bold mb-4">
+     Profile
+    </h2>
+    <div class="bg-white p-4 rounded shadow">
+     <div class="flex items-center mb-4">
+      <img alt="User profile picture, a generic avatar icon" class="h-20 w-20 rounded-full mr-4" height="80" src="https://storage.googleapis.com/a1aa/image/K7u4ymgAUYrbF5CBBGpeRyhJwK0bjIiIBd7lZB96Fr6r2B8JA.jpg" width="80"/>
+      <div>
+       <h3 class="text-xl font-semibold">
+        John Doe
+       </h3>
+       <p class="text-gray-600">
+        john.doe@example.com
+       </p>
+      </div>
+     </div>
+     <form>
+      <div class="mb-4">
+       <label class="block text-gray-700 mb-2" for="username">
+        Username
+       </label>
+       <input class="w-full p-2 border rounded" id="username" name="username" type="text" value="John Doe"/>
+      </div>
+      <div class="mb-4">
+       <label class="block text-gray-700 mb-2" for="email">
+        Email
+       </label>
+       <input class="w-full p-2 border rounded" id="email" name="email" type="email" value="john.doe@example.com"/>
+      </div>
+      <div class="mb-4">
+       <label class="block text-gray-700 mb-2" for="password">
+        Password
+       </label>
+       <input class="w-full p-2 border rounded" id="password" name="password" type="password"/>
+      </div>
+      <button class="bg-orange-600 text-white p-2 rounded" type="submit">
+       Save Changes
+      </button>
+     </form>
+     <button class="bg-red-600 text-white p-2 rounded mt-4" onclick="confirmDelete()">
+      Delete Account
+     </button>
+    </div>
+   </main>
+  </div>
+  <footer class="bg-black text-white p-4 text-center">
+   <p>
+    © TICKETIN PLUS. All rights reserved.
+   </p>
+  </footer>
+ </body>
+</html>

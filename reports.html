@@ -1,0 +1,121 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>TICKETIN PLUS - Reports</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"/>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+<header class="bg-black text-white p-4 flex justify-between items-center">
+    <div class="flex items-center">
+        <img alt="Company logo, a stylized letter 'T' in black and orange" class="h-10 w-10 mr-2" height="50" src="https://storage.googleapis.com/a1aa/image/hCIfyXO9xzW3HKp6f4sZidqucO2hfckeNuDnf69YeEdJW7AeJA.jpg" width="40"/>
+        <h1 class="text-xl font-bold">TICKETIN PLUS</h1>
+        <div class="flex items-center">
+            <input class="p-2 rounded bg-white text-black" placeholder="Search..." type="text"/>
+            <button class="ml-2 p-2 bg-orange-600 rounded">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    
+</header>
+<div class="flex">
+    <aside class="bg-black text-white w-64 p-4 space-y-4">
+        <nav>
+            <ul>
+                <li class="mb-2">
+                    <a class="flex items-center p-2 hover:bg-gray-700 rounded" href="dashboard.html">
+                        <i class="fas fa-home mr-2"></i>
+                        Dashboard
+                    </a>
+                </li>
+                <li class="mb-2">
+                    <a class="flex items-center p-2 hover:bg-gray-700 rounded" href="tickets.html">
+                        <i class="fas fa-ticket-alt mr-2"></i>
+                        Tickets
+                    </a>
+                </li>
+                <li class="mb-2">
+                    <a class="flex items-center p-2 hover:bg-gray-700 rounded" href="settings.html">
+                        <i class="fas fa-cogs mr-2"></i>
+                        Settings
+                    </a>
+                </li>
+                <li class="mb-2">
+                    <a class="flex items-center p-2 hover:bg-gray-700 rounded" href="users.html">
+                        <i class="fas fa-users mr-2"></i>
+                        Users
+                    </a>
+                </li>
+                <li class="mb-2">
+                    <a class="flex items-center p-2 hover:bg-gray-700 rounded" href="reports.html">
+                        <i class="fas fa-chart-line mr-2"></i>
+                        Reports
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+    <main class="flex-1 p-6">
+        <h2 class="text-2xl font-bold mb-4">Reports</h2>
+        <div class="bg-white p-4 rounded shadow">
+            <h3 class="text-xl font-semibold mb-2">Ticket Reports</h3>
+            <div class="mb-4">
+                <label class="block text-gray-700 mb-2" for="report-type">Report Type</label>
+                <select class="w-full p-2 border rounded" id="report-type" name="report-type">
+                    <option value="open-tickets">Open Tickets</option>
+                    <option value="closed-tickets">Closed Tickets</option>
+                    <option value="pending-tickets">Pending Tickets</option>
+                </select>
+            </div>
+            <button class="bg-orange-600 text-white p-2 rounded" onclick="generateReport()">Generate Report</button>
+        </div>
+        <div class="bg-white p-4 rounded shadow mt-6">
+            <h3 class="text-xl font-semibold mb-2">User Activity Reports</h3>
+            <div class="mb-4">
+                <label class="block text-gray-700 mb-2" for="user-report-type">Report Type</label>
+                <select class="w-full p-2 border rounded" id="user-report-type" name="user-report-type">
+                    <option value="login-activity">Login Activity</option>
+                    <option value="ticket-activity">Ticket Activity</option>
+                </select>
+            </div>
+            <button class="bg-orange-600 text-white p-2 rounded" onclick="generateUserReport()">Generate Report</button>
+        </div>
+        <div class="bg-white p-4 rounded shadow mt-6">
+            <h3 class="text-xl font-semibold mb-2">Generated Reports</h3>
+            <div id="generated-reports">
+                <!-- Generated reports will be displayed here -->
+            </div>
+        </div>
+    </main>
+</div>
+<footer class="bg-black text-white p-4 text-center">
+    <p>© TICKETIN PLUS. All rights reserved.</p>
+</footer>
+<script>
+    function generateReport() {
+        const reportType = document.getElementById('report-type').value;
+        const reportContainer = document.getElementById('generated-reports');
+        const reportElement = document.createElement('div');
+        reportElement.className = 'bg-gray-100 p-4 rounded shadow mt-4';
+        reportElement.innerHTML = `<h4 class="text-lg font-semibold mb-2">${reportType.replace('-', ' ')} Report</h4><p>Report content for ${reportType.replace('-', ' ')}...</p>`;
+        reportContainer.appendChild(reportElement);
+    }
+
+    function generateUserReport() {
+        const reportType = document.getElementById('user-report-type').value;
+        const reportContainer = document.getElementById('generated-reports');
+        const reportElement = document.createElement('div');
+        reportElement.className = 'bg-gray-100 p-4 rounded shadow mt-4';
+        reportElement.innerHTML = `<h4 class="text-lg font-semibold mb-2">${reportType.replace('-', ' ')} Report</h4><p>Report content for ${reportType.replace('-', ' ')}...</p>`;
+        reportContainer.appendChild(reportElement);
+    }
+</script>
+</body>
+</html>
